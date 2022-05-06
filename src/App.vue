@@ -1,39 +1,34 @@
 <template>
   <div id="app">
-    <header-component/>
-    <main-component/> 
+    <header-component />
+    <main-component />
   </div>
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue'
-import MainComponent from './components/MainComponent.vue'
-
+import HeaderComponent from "./components/HeaderComponent.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 export default {
-
-  name: 'App',
+  name: "App",
   components: {
     HeaderComponent,
-    MainComponent
+    MainComponent,
   },
- 
-  
-}
-
+};
 </script>
 
-<style >
-*{
+<style>
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.container{
+.container {
   width: 70%;
   margin: 0 auto;
 }
-.debug{
+.debug {
   border: 1px solid black;
 }
 </style>
