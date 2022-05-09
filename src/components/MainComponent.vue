@@ -1,6 +1,12 @@
 <template>
   <main>
-    <div class="container ">
+    <select name="" id="" v-model="selezionato">
+      <!--v-for di generi-->
+      <option value="all">all</option>
+      <option value="rock"></option>
+    </select>
+    {{selezionato}}
+    <div class="container">
       <div class="songCard" v-for="(items, index) in songCards" :key="index">
         <div class="card">
           <img :src="items.poster" alt="" />
@@ -23,18 +29,35 @@ export default {
   data() {
     return {
       songCards: {},
+      selezionato:"",
+
+      generi: {},
     };
   },
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((res) => {
-        this.songCards = res.data.response;
         console.log(res.data);
+        this.songCards = res.data.response;
+        this.songCards.forEach((item)=>{
+          console.log( "item" ,this.item)
+          if(!this.songCards.includes(item.songCards)){
+            this.songCards.push(item.songCards);
+          }
+
+        })
+
+        //foreach di songCards
+        //se il genere NON è contenuto nell'array this.genere allora =>
+        //=>per ogni genere dentro una songCard inserisco tale genere nell'array this.generi
       })
       .catch((error) => {
         console.log(error);
       });
+  },
+  computed: {
+    
   },
 };
 </script>
@@ -46,7 +69,7 @@ main {
 }
 .songCard {
   width: calc((100% / 5) - 20px);
-height: 250px;
+  height: 290px;
   text-align: center;
   background-color: hsl(210deg 21% 23%);
   margin: 10px auto;
@@ -60,14 +83,14 @@ img {
   height: 160px;
   padding: 15px;
 }
-h4{
-    color: white;
-    margin-bottom:10px ;
-    padding: 0 5px;
+h4 {
+  color: white;
+  margin-bottom: 15px;
+  padding: 0 5px;
 }
-p{
-    color: hsl(217deg 4% 36%);
-    font-size: 14px;
+p {
+  color: hsl(217deg 4% 36%);
+  font-size: 14px;
 }
 .container {
   display: flex;

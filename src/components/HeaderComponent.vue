@@ -2,7 +2,9 @@
     <header>
         <div class="logo">
             <img src="../assets/logo.png" alt="logo spotify">
+
         </div>
+        
     </header>
 </template>
 
