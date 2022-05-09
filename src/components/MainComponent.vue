@@ -57,7 +57,7 @@ height: 250px;
   justify-content: center;
 }
 img {
-  height: 140px;
+  height: 160px;
   padding: 15px;
 }
 h4{

@@ -1,6 +1,8 @@
 <template>
     <header>
-
+        <div class="logo">
+            <img src="../assets/logo.png" alt="logo spotify">
+        </div>
     </header>
 </template>
 
@@ -14,9 +16,12 @@ export default {
 header{
     background-color: hsl(210deg 21% 23%);
     height: 60px;
+    width: 100%;
 }
 img{
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
 }
 </style>
